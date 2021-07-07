@@ -19,7 +19,8 @@ public enum ResponseCodeEnum {
      * 参数码
      */
     MISSING_TRACE_ID(888, "missing trace id"),
-    REQUEST_PARAM_IS_NULL(1000, "request param is null");
+    REQUEST_PARAM_IS_NULL(1000, "request param is null"),
+    DATA_IS_NULL_OR_EMPTY(2000, "data is null or empty");
 
     private Integer code;
 

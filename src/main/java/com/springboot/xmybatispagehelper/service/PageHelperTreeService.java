@@ -8,4 +8,6 @@ public interface PageHelperTreeService {
 
     PageInfo<PageHelperTree> queryAllTree(PageHelperTreeRequest pageHelperTreeRequest);
 
+    void cleanTreeRedisCache(PageHelperTreeRequest pageHelperTreeRequest);
+
 }

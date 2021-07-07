@@ -12,6 +12,8 @@ import java.io.Serializable;
 @ToString
 public class PageHelperTree implements Serializable {
 
+    private static final long serialVersionUID = -577761045225670735L;
+
     private Integer id;
 
     private String name;

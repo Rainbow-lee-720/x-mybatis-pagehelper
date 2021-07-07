@@ -44,6 +44,10 @@ public class PageHelperTreeController {
         try {
             //查询
             PageInfo<PageHelperTree> pageInfo = pageHelperTreeService.queryAllTree(pageHelperTreeRequest);
+            if (ObjectUtils.isEmpty(pageInfo.getList())) {
+                return new ResponseEntity(ResponseCodeEnum.DATA_IS_NULL_OR_EMPTY.getCode(), false,
+                        ResponseCodeEnum.DATA_IS_NULL_OR_EMPTY.getMessage(), null);
+            }
 
             //封装
             Map<String, Object> responseMap = new HashMap<>();
@@ -55,7 +59,7 @@ public class PageHelperTreeController {
 
             long end = System.currentTimeMillis();
             logger.error("###x-trace-id: {}, ClassName: {}, requestUrl: {}, response: {}, spend: {}", traceId, this.getClass().getName(),
-                    "/page/tree/queryAll", null, (end - start) + "ms");
+                    "/page/tree/queryAll", responseMap.toString(), (end - start) + "ms");
             return new ResponseEntity<Map<String, Object>>(ResponseCodeEnum.OK.getCode(),
                     true, ResponseCodeEnum.OK.getMessage(), responseMap);
         } catch (Exception e) {
