@@ -12,6 +12,13 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+/**
+ * @Author Lee
+ * @Date 2021-7-7 13:00PM
+ * @Location Wuxi
+ * @Describe Redis Config
+ * @Email 237594470@qq.com
+ */
 @SuppressWarnings("all")
 @Configuration
 @Slf4j
