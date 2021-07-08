@@ -14,6 +14,13 @@ import org.springframework.data.redis.core.RedisTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @Author Lee
+ * @Date 2021-7-8 09:00AM
+ * @Location Wuxi
+ * @Describe RedisTestApplicationTest
+ * @Email 237594470@qq.com
+ */
 @SpringBootTest
 @Slf4j
 public class RedisTestApplicationTest {
