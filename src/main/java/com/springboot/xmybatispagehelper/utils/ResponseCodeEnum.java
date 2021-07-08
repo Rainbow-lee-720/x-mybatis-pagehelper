@@ -3,6 +3,13 @@ package com.springboot.xmybatispagehelper.utils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * @Author Lee
+ * @Date 2021-7-8 09:00AM
+ * @Location Wuxi
+ * @Describe ResponseCodeEnum
+ * @Email 237594470@qq.com
+ */
 @Getter
 @AllArgsConstructor
 public enum ResponseCodeEnum {

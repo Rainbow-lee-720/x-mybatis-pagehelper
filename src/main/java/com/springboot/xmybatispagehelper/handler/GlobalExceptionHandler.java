@@ -10,6 +10,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * @Author Lee
+ * @Date 2021-7-8 09:00AM
+ * @Location Wuxi
+ * @Describe GlobalExceptionHandler
+ * @Email 237594470@qq.com
+ */
 @ControllerAdvice
 @ResponseBody
 @Component
