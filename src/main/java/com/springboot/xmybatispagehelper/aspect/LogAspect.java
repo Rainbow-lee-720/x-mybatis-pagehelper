@@ -52,7 +52,6 @@ public class LogAspect {
             throw new ParamNotExistException(ResponseCodeEnum.REQUEST_PARAM_SIZE_0.getMessage());
         }
         String traceId = args[0].toString();
-        logger.info("###LogAspect ===> x-trace-id: {}", traceId);
 
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         HttpServletRequest servletRequest = ((ServletRequestAttributes) requestAttributes).getRequest();
@@ -67,6 +66,7 @@ public class LogAspect {
         try {
             result = pjp.proceed();
         } catch (Throwable e) {
+            //执行出现异常会运行到此处
             logger.info("###System Exception::traceId: {}, requestUrl: {}, exception: {}, {}", traceId, servletRequest.getRequestURI(), e.toString(), e.getStackTrace());
             throw e;
         }

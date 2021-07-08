@@ -23,7 +23,8 @@ public enum ResponseCodeEnum {
     ERROR_TRACE_ID(889, "error trace id"),
     REQUEST_PARAM_IS_NULL(1000, "request param is null"),
     REQUEST_PARAM_SIZE_0(1500, "request params is 0"),
-    DATA_IS_NULL_OR_EMPTY(2000, "data is null or empty");
+    DATA_IS_NULL_OR_EMPTY(2000, "data is null or empty"),
+    CUSTOM_ERROR_EXCEPTION_CODE(3333, "custonm error exception try catch");
 
     private Integer code;
 

@@ -33,13 +33,13 @@ public class TraceValidHanderInterceptor implements HandlerInterceptor {
         String traceId = request.getHeader("x-trace-id");
         if (StringUtils.isEmpty(traceId)) {
             response.setStatus(ResponseCodeEnum.MISSING_TRACE_ID.getCode());
-            logger.error("missing request header -> 'x-trace-id'");
+            logger.error("missing request header -> 'x-trace-id', x-trace-id: {}", traceId);
             throw new TraceValidNullException("missing request header -> 'x-trace-id'");
         }
 
         if (traceId.startsWith("x-") || traceId.contains("error")) {
             response.setStatus(ResponseCodeEnum.ERROR_TRACE_ID.getCode());
-            logger.error("error request header -> 'x-trace-id'");
+            logger.error("error request header -> 'x-trace-id', x-trace-id: {}", traceId);
             throw new TraceValidErrorException("error request header -> 'x-trace-id'");
         }
         return true;

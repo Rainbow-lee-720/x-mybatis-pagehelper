@@ -2,6 +2,7 @@ package com.springboot.xmybatispagehelper.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.springboot.xmybatispagehelper.entity.PageHelperTree;
+import com.springboot.xmybatispagehelper.exception.CustomErrorExistException;
 import com.springboot.xmybatispagehelper.service.PageHelperTreeService;
 import com.springboot.xmybatispagehelper.utils.ResponseCodeEnum;
 import com.springboot.xmybatispagehelper.utils.ResponseEntity;
@@ -86,6 +87,13 @@ public class PageHelperTreeController {
             return new ResponseEntity<Map<String, Object>>(ResponseCodeEnum.SERVER_ERROR.getCode(),
                     false, ResponseCodeEnum.SERVER_ERROR.getMessage(), null);
         }
+    }
+
+    @RequestMapping(value = "/exception")
+    public ResponseEntity<Object> customException(@RequestHeader(value = "x-trace-id") String traceId,
+                                                  @Valid PageHelperTreeRequest pageHelperTreeRequest,
+                                                  BindingResult bindingResult) {
+        throw new CustomErrorExistException(traceId, 3333, "this is customException!");
     }
 
 }
